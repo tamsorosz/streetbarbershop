@@ -1,0 +1,34 @@
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Galéria</span>
+      <h2>A munkáink tükrözik<br>a <em>szenvedélyünket</em></h2>
+      <div class="section-divider"></div>
+      <p>Tekintsd meg korábbi munkáinkat és győzödj meg a minőségről.</p>
+    </div>
+  </div>
+
+  <div class="gallery-grid">
+    @for (item of items; track item.url) {
+      <div class="gallery-item" [class.wide]="item.span === 'wide'" [class.tall]="item.span === 'tall'">
+        <img [src]="item.url" [alt]="item.alt" loading="lazy" />
+        <div class="gallery-overlay">
+          <i class="fas fa-expand-alt"></i>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="gallery-footer container">
+    <p>Kövesd Instagram oldalunkat a legfrissebb munkákért</p>
+    <a
+      href="https://www.facebook.com/p/Street-Barbershop-100064034610492/"
+      target="_blank"
+      rel="noopener"
+      class="btn-outline"
+    >
+      <i class="fab fa-facebook"></i>
+      Facebook oldalunk
+    </a>
+  </div>
+</section>

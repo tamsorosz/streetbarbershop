@@ -1,0 +1,25 @@
+<div class="loader-wrap" [class.hidden]="hidden()">
+  <div class="spray-bg"></div>
+
+  <div class="loader-content">
+    <div class="graffiti-logo">
+      <span class="gl-the">THE</span>
+      <span class="gl-street" data-text="STREET">STREET</span>
+      <span class="gl-barber">BARBER<em>SHOP</em></span>
+    </div>
+
+    <div class="loader-bar-wrap">
+      <div class="loader-bar">
+        <div class="loader-fill" [style.width.%]="progress()"></div>
+      </div>
+      <span class="loader-pct">{{ progress() > 100 ? 100 : progress() }}%</span>
+    </div>
+
+    <p class="loader-tag">Budapest · Kispest · Street Art · Barbershop</p>
+  </div>
+
+  <div class="spray-corner tl"></div>
+  <div class="spray-corner tr"></div>
+  <div class="spray-corner bl"></div>
+  <div class="spray-corner br"></div>
+</div>

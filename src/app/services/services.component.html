@@ -1,0 +1,46 @@
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Szolgáltatások</span>
+      <h2>Mit kínálunk neked?</h2>
+      <div class="section-divider"></div>
+      <p>Prémium barbershop élmény minden alkalommal. Hajvágástól a komplett megjelenés frissítésig.</p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <div class="service-card" [class.featured]="service.featured">
+          @if (service.featured) {
+            <div class="featured-badge">Legnépszerűbb</div>
+          }
+          <div class="service-icon">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <div class="service-footer">
+            <span class="service-duration">
+              <i class="far fa-clock"></i> {{ service.duration }}
+            </span>
+            <a
+              href="https://www.notino.hu/szalonok/the-street-barbershop/"
+              target="_blank"
+              rel="noopener"
+              class="service-book-btn"
+            >
+              Foglalás <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="services-cta">
+      <p>Nem találod amit keresel? Vedd fel velünk a kapcsolatot!</p>
+      <a href="tel:+36205431074" class="btn-outline">
+        <i class="fas fa-phone"></i>
+        +36 20 543 1074
+      </a>
+    </div>
+  </div>
+</section>

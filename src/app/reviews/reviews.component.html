@@ -1,0 +1,64 @@
+<section class="reviews" id="reviews">
+
+  <!-- Animated counters -->
+  <div class="stats-row">
+    @for (stat of stats; track stat.label) {
+      <div class="stat-counter">
+        <span class="counter-num">{{ stat.current }}{{ stat.suffix }}</span>
+        <span class="counter-label">{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Vélemények</span>
+      <h2>Mit mondanak <em>vendégeink?</em></h2>
+      <div class="section-divider"></div>
+      <p>Valódi vélemények valódi vendégektől. 100% ajánlás a Notino platformon.</p>
+    </div>
+
+    <div class="reviews-grid">
+      @for (review of reviews; track review.name) {
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-avatar" [style.background]="review.color">
+              {{ review.initials }}
+            </div>
+            <div class="review-meta">
+              <strong>{{ review.name }}</strong>
+              <span class="review-service">{{ review.service }}</span>
+            </div>
+            <div class="review-notino">
+              <i class="fas fa-check-circle"></i> Notino
+            </div>
+          </div>
+
+          <div class="review-stars">
+            @for (s of starsArray(review.stars); track $index) {
+              <i class="fas fa-star"></i>
+            }
+          </div>
+
+          <p class="review-text">"{{ review.text }}"</p>
+
+          <span class="review-date">{{ review.date }}</span>
+
+          <div class="review-quote"><i class="fas fa-quote-right"></i></div>
+        </div>
+      }
+    </div>
+
+    <div class="reviews-cta">
+      <a
+        href="https://www.notino.hu/szalonok/the-street-barbershop/"
+        target="_blank"
+        rel="noopener"
+        class="btn-outline"
+      >
+        <i class="fas fa-external-link-alt"></i>
+        Összes vélemény a Notinon
+      </a>
+    </div>
+  </div>
+</section>

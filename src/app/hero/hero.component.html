@@ -1,0 +1,66 @@
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-overlay"></div>
+    <img
+      src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1920&q=80"
+      alt="The Street Barbershop"
+      class="hero-img"
+    />
+  </div>
+
+  <div class="hero-content container">
+    <div class="hero-badge">
+      <span class="badge-line"></span>
+      <span>Kispest, Budapest</span>
+      <span class="badge-line"></span>
+    </div>
+
+    <h1 class="hero-title">
+      THE STREET<br>
+      <span class="hero-title-accent" data-text="BARBERSHOP">BARBERSHOP</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Prémium hajvágás és szakállformázás.<br>
+      Jó hangulat, zene és precizitás garantálva.
+    </p>
+
+    <div class="hero-cta">
+      <a
+        href="https://www.notino.hu/szalonok/the-street-barbershop/"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary"
+      >
+        <i class="fas fa-calendar-check"></i>
+        Foglalj időpontot
+      </a>
+      <a class="btn-outline" (click)="scrollToServices()">
+        <i class="fas fa-scissors"></i>
+        Szolgáltatások
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Ajánlás</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">5★</span>
+        <span class="stat-label">Értékelés</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">P</span>
+        <span class="stat-label">Ingyenes parkoló</span>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-indicator" (click)="scrollToAbout()">
+    <span>Görgets le</span>
+    <i class="fas fa-chevron-down"></i>
+  </a>
+</section>

@@ -1,0 +1,58 @@
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Csapatunk</span>
+      <h2>Ismerd meg <em>barbereinket</em></h2>
+      <div class="section-divider"></div>
+      <p>Vidám, stílusos csapatunk mindig lépést tart az újabb trendekkel. Pontosan tudják, mire van szükséged.</p>
+    </div>
+
+    <div class="team-grid">
+      @for (member of members; track member.name + $index) {
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img [src]="member.photo" [alt]="member.name" loading="lazy" />
+            <div class="team-photo-overlay">
+              <a
+                href="https://www.notino.hu/szalonok/the-street-barbershop/"
+                target="_blank"
+                rel="noopener"
+                class="overlay-btn"
+              >
+                <i class="fas fa-calendar-check"></i>
+                Foglalás
+              </a>
+            </div>
+          </div>
+
+          <div class="team-info">
+            <div class="team-name-wrap">
+              <h3>{{ member.name }}</h3>
+              <span class="team-role">{{ member.role }}</span>
+            </div>
+
+            <p class="team-bio">{{ member.bio }}</p>
+
+            <div class="team-specialties">
+              @for (spec of member.specialties; track spec) {
+                <span class="specialty-tag">{{ spec }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="team-cta">
+      <a
+        href="https://www.notino.hu/szalonok/the-street-barbershop/"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary"
+      >
+        <i class="fas fa-calendar-check"></i>
+        Foglalj időpontot most
+      </a>
+    </div>
+  </div>
+</section>

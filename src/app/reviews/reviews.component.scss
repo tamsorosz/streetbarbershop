@@ -1,0 +1,208 @@
+.reviews {
+  background: var(--dark);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red-dark), var(--blue), var(--red-dark));
+  }
+}
+
+/* ── Stats counter bar ─────────────────────── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--dark-3);
+  border-bottom: 2px solid var(--red-dark);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+      rgba(208,16,32,0.06) 0%,
+      transparent 50%,
+      rgba(21,85,204,0.05) 100%);
+    pointer-events: none;
+  }
+}
+
+.stat-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 20px;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+
+  &:last-child { border-right: none; }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 40px; height: 3px;
+    background: var(--grad-red);
+  }
+
+  .counter-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 5vw, 64px);
+    letter-spacing: 3px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--red-light);
+    text-shadow: 3px 3px 0 rgba(208,16,32,0.2);
+    line-height: 1;
+    transition: color 0.3s;
+  }
+
+  .counter-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  &:hover .counter-num {
+    color: var(--red-light);
+    -webkit-text-stroke-color: transparent;
+    text-shadow: 0 0 20px rgba(208,16,32,0.5);
+  }
+}
+
+/* ── Reviews section ───────────────────────── */
+.reviews .container {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.review-card {
+  background: var(--dark-3);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid var(--red-dark);
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+  transition: all 0.35s ease;
+
+  &:nth-child(even) {
+    border-left-color: var(--blue-dark);
+
+    .review-stars i { color: var(--blue-light); }
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-left-color: var(--red-light);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4), -4px 0 0 var(--red);
+  }
+
+  &:nth-child(even):hover {
+    border-left-color: var(--blue-light);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4), -4px 0 0 var(--blue);
+  }
+}
+
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.review-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  strong { font-size: 14px; color: var(--text); }
+
+  .review-service {
+    font-size: 11px;
+    font-family: 'Permanent Marker', cursive;
+    color: var(--text-muted);
+  }
+}
+
+.review-notino {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+
+  i { color: #4caf50; margin-right: 4px; }
+}
+
+.review-stars {
+  display: flex;
+  gap: 4px;
+
+  i { font-size: 14px; color: var(--red-light); }
+}
+
+.review-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-style: italic;
+  flex: 1;
+}
+
+.review-date {
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+}
+
+.review-quote {
+  position: absolute;
+  bottom: 18px;
+  right: 22px;
+  font-size: 28px;
+  color: rgba(255,255,255,0.04);
+}
+
+.reviews-cta {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+}
