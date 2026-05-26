@@ -1,5 +1,4 @@
-name = "streebarber"
-compatibility_date = "2024-01-01"
+name = "streetbarbershop"
 
 [site]
-bucket = "bucket = "./dist/streetbarbershop/browser"
+bucket = "./dist/streetbarbershop/browser"
