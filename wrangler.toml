@@ -2,4 +2,4 @@ name = "streebarber"
 compatibility_date = "2024-01-01"
 
 [site]
-bucket = "C:\code\streetbarbershop\src"
+bucket = "bucket = "./dist/streetbarbershop/browser"
