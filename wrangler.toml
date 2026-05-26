@@ -1,4 +1,0 @@
-name = "streetbarbershop"
-
-[site]
-bucket = "./dist/streetbarbershop/browser"
